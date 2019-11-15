@@ -1,6 +1,6 @@
 # Forex Comix - The go-to resource for language learning for comic-book lovers
 
-This website is a labour of love. It is designed for three types of users - but is underpinned by a love of learning languages and comic books/graphic novels.
+Forex-Comix: Foreign Exchange Comics. This website is a labour of love. It is designed for three types of users - but is underpinned by a love of learning languages and comic books/graphic novels.
 
 It is my conviction that language learning can be fun, and with the abundance of comics readily available, they can introduce readers to various languages in a way that rote textbooks and stolid boring list tables cannot.
 
