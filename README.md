@@ -20,7 +20,7 @@ From a language learner perspective, this site is relevant to all reading age gr
 
 Initial wireframes were created using **Balsamiq for desktop**:
 
-![snip1.jpg](./assets/images/wireframe/forex.comix.png)
+![forex.comix.png](./assets/images/wireframe/forex.comix.png)
 
 
 ## Features
