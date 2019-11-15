@@ -14,13 +14,13 @@ From a language learner perspective, this site is relevant to all reading age gr
 2. **User story 2**: A bookseller who wants to sell their comic books/raise awareness of their store (digital or physical).
 3. **User story 3**: A language school/college that wishes to supply novel language comics to the classroom and curriculum to attract and engage students.
 4. **User story 4**: Comic book fans in general who want to read widely.
-5. **User story 5**: Comic book fans who want to meet likeminded people and or othersfrom different cultures/countries.
+5. **User story 5**: Comic book fans who want to meet likeminded people and or others from different cultures/countries.
 
 ### Wireframes
 
 Initial wireframes were created using **Balsamiq for desktop**:
 
-![snip1.jpg](assets/images/wireframe/comix.final.pdf)
+![snip1.jpg](assets/images/wireframe/forex.comix.png)
 
 
 ## Features
