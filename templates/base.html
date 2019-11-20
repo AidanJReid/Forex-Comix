@@ -12,18 +12,16 @@
 </head>
 
 <body>
-    <div id="home" style="background-image: url('{{ url_for('static', filename='assets/images/wall.jpg') }}">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col">
-                    <a href="/">
-                        <h4 id="Name">Forex-Comix</h4>
-                        <p id="subtitle"><i>Used and New Foreign Language Comics For Exchange</i></p>
-                    </a>
-                </div>
-            </div>
-        </div>
+
+    <!--Container Head-->
+
+    <div class="jumbotron" id="home" style="background-image: url('{{ url_for('static', filename='assets/images/ar.jpg') }}">
+        <h1 class="display-3">Forex-Comix</h1>
+        <p class="lead">Used and New Foreign Language Comics For Exchange</p>
+
     </div>
+
+    <!--Navbar-->
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,38 +31,40 @@
         <div class="collapse navbar-collapse" id="navbarColor03">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ url_for('index') }}">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('learner')}}">Learner</a>
+                    <a class="nav-link" href="{{ url_for('learner') }}">Learner</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('seller')}}">Seller</a>
+                    <a class="nav-link" href="{{ url_for('seller') }}">Seller</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('school')}}">School</a>
+                    <a class="nav-link" href="{{ url_for('school') }}">School</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('database')}}">Database</a>
+                    <a class="nav-link" href="{{ url_for('database') }}">Database</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('contact')}}">Contact</a>
+                    <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('login')}}">Login</a>
+                    <a class="nav-link" href="{{ url_for('login') }}">Login</a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    </header>
+    <!--Main Container-->
 
     <div class="container-fluid" style="background-image: url('{{ url_for('static', filename='assets/images/wall.jpg') }}">
+
         {% block content %} {% endblock %}
+
     </div>
 
-    <div class="container-fluid" id="body-bg">
-    </div>
+    <!--Footer-->
+
     <div class="container-fluid footer footer-dark bg-dark">
         <footer="container">
             <div class="row">
@@ -85,6 +85,8 @@
 
 <!--Custom Scripts-->
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 
 </html>

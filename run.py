@@ -3,31 +3,31 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route('/')
 def index():
     return render_template("index.html")
     
-@app.route("/learner")
+@app.route('/learner')
 def learner():
     return render_template("learner.html")
     
-@app.route("/seller")
+@app.route('/seller')
 def seller():
     return render_template("seller.html")
 
-@app.route("/school")
+@app.route('/school')
 def school():
     return render_template("school.html")
 
-@app.route("/login")
+@app.route('/login')
 def login():
     return render_template("login.html")
     
-@app.route("/database")
+@app.route('/database')
 def database():
     return render_template("database.html")
     
-@app.route("/contact")
+@app.route('/contact')
 def contact():
     return render_template("contact.html")
     
