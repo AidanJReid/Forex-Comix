@@ -1,15 +1,64 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
-    <div class="container-fluid" id="body-bg">
-        <div class="container row">
-            <div class="col">
-                <h2>Database</h2>
+<div class="container-fluid" id="body-bg">
+    <div class="container row">
+        <div class="col">
+            <h2>{{ page_title }}</h2>
 
-                <p>You can search our existing catalogue of comics and see where and who owns them.
-            </div>
-            <div class="container">
-                <form>
+            <p>You can search our existing catalogue of comics and see where and who owns them.
+        </div>
+        <div class="container">
+            <form>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Language">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Genre">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Difficulty">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Condition">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Title">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Main Character">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Image">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Extra">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="container row">
+        <div class="col">
+            <h2>Search</h2>
+
+            <p>Search by keyword, language and genre.</p>
+            <form>
+                <div class="form">
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Keyword">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Sort By">
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col">
                             <input type="text" class="form-control" placeholder="Language">
@@ -18,71 +67,46 @@
                             <input type="text" class="form-control" placeholder="Genre">
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="Difficulty">
-                        </div>
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="Condition">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="Title">
-                        </div>
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="Main Character">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="Image">
-                        </div>
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="Extra">
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="container row">
-            <div class="col">
-                <h2>Search</h2>
-
-                <p>Search by keyword, language and genre.</p>
-                <form>
-                    <div class="form">
-                        <div class="row">
-                            <div class="col">
-                                <input type="text" class="form-control" placeholder="Keyword">
-                            </div>
-                            <div class="col">
-                                <input type="text" class="form-control" placeholder="Sort By">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <input type="text" class="form-control" placeholder="Language">
-                            </div>
-                            <div class="col">
-                                <input type="text" class="form-control" placeholder="Genre">
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <div class="container" id="comics">
-            <div class="row">
-                <div class="col">
-                    <h3>Showing 1 -12 (of 364 comics)</h3>
                 </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="container comics" id="comics">
+            <h3>Showing 1 -12 (of 364 comics)</h3>
+            <hr class="hr-sections">
+            <div class="row no-gutters">
+                {% for comic in comics %}
+                <div class="col-xs-12 col-md-6 col-lg-3">
+                    <div class="card border-info mb-3">
+                        <div class="card-wrapper">
+                            <div class="card card-rotating text-center">
+                                <div class="face-front">
+                                    <div class="card-up">
+                                    <img class="image img-responsive" src="{{ comic.image_source }}" alt="comic" style="width:250px;height:350px">
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="card-language">{{ comic.language }}</div>
+                                        <h4><a href="/database/{{ comic.url }}">{{ comic.title }}</a></h4>
+                                        <ul>
+                                            <li>Genre: {{ comic.genre }}</li>
+                                            <li>Difficulty: {{ comic.difficulty }}</li>
+                                            <li>Condition: {{ comic.condition }}</li>
+                                            <li>Genre: {{ comic.genre }}</li>
+                                            <li>Character: {{ comic.character }}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
-</body>
+    </body>
 
-{% endblock %}
+    {% endblock %}
 
-</html>
+    </html>
