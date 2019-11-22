@@ -5,7 +5,7 @@
         <div class="col">
             <h2>{{ page_title }}</h2>
 
-            <p>You can search our existing catalogue of comics and see where and who owns them.
+            <p>You can search our existing catalogue of comics and see where and who owns them.</p>
         </div>
         <div class="container">
             <form>
@@ -73,40 +73,43 @@
     </div>
 
     <div class="container comics" id="comics">
-            <h3>Showing 1 -12 (of 364 comics)</h3>
-            <hr class="hr-sections">
-            <div class="row no-gutters">
-                {% for comic in comics %}
-                <div class="col-xs-12 col-md-6 col-lg-3">
-                    <div class="card border-info mb-3">
-                        <div class="card-wrapper">
-                            <div class="card card-rotating text-center">
-                                <div class="face-front">
-                                    <div class="card-up">
-                                    <img class="image img-responsive" src="{{ comic.image_source }}" alt="comic" style="width:250px;height:350px">
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="card-language">{{ comic.language }}</div>
-                                        <h4><a href="/database/{{ comic.url }}">{{ comic.title }}</a></h4>
-                                        <ul>
-                                            <li>Genre: {{ comic.genre }}</li>
-                                            <li>Difficulty: {{ comic.difficulty }}</li>
-                                            <li>Condition: {{ comic.condition }}</li>
-                                            <li>Genre: {{ comic.genre }}</li>
-                                            <li>Character: {{ comic.character }}</li>
-                                        </ul>
-                                    </div>
-                                </div>
+        <h3>Showing 1 -12 (of 364 comics)</h3>
+        <hr class="hr-sections">
+        <div class="row no-gutters">
+
+            {% for comic in DBComix %}
+
+            <div class="col-xs-12 col-md-6 col-lg-3">
+                <div class="border-info mb-3">
+                    <div class="flip-card">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <img class="image img-responsive" src="{{ comic.image_source }}" alt="comic" style="width:200px;height:300px">
+                            </div>
+                            <div class="flip-back">
+                                <h4>{{ comic.language }}</h4>
+                                <h5><a href="/database/{{ comic.url }}">{{ comic.title }}</a></h5>
+                                <hr>
+                                <ul>
+                                    <li>Genre: {{ comic.genre }}</li>
+                                    <li>Difficulty: {{ comic.difficulty }}</li>
+                                    <li>Condition: {{ comic.condition }}</li>
+                                    <li>Genre: {{ comic.genre }}</li>
+                                    <li>Character: {{ comic.character }}</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                {% endfor %}
             </div>
+
+            {% endfor %}
+
         </div>
     </div>
-    </body>
+</div>
+</body>
 
-    {% endblock %}
+{% endblock %}
 
-    </html>
+</html>

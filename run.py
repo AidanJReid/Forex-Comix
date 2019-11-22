@@ -1,9 +1,15 @@
 import os
-import json
-from flask import Flask, render_template, request, flash
+
+from flask import Flask, render_template, request, url_for, redirect, flash
+from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
 
 app = Flask(__name__)
-app.secret_key = 'something_stupid'
+
+app.config["MONGO_DBNAME"] = 'ForexComix'
+app.config["MONGO_URI"] = 'mongodb+srv://natureboy:ttDFW9m3@myfirstcluster-fbekj.mongodb.net/ForexComix?retryWrites=true&w=majority'
+
+mongo = PyMongo(app)
 
 @app.route('/')
 def index():
@@ -27,22 +33,11 @@ def login():
     
 @app.route('/database')
 def database():
-    data = []
-    with open("data/comics.json","r") as json_data:
-        data = json.load(json_data)
-    return render_template("database.html", page_title="Database", comics=data)
+    return render_template("database.html", page_title="Database", DBComix=mongo.db.DBComix.find())
     
 @app.route('/database/<comic_title>')
 def database_comic(comic_title):
-    comic = {}
-    
-    with open("data/comics.json", "r") as json_data:
-        data = json.load(json_data)
-        for obj in data:
-            if obj["url"] == comic_title:
-                comic = obj
-                
-    return render_template("comic.html", comic=comic)
+    return render_template("comic.html", DBComix=mongo.db.DBComix.find())
                 
     
 @app.route('/contact', methods=["GET", "POST"])

@@ -2,15 +2,19 @@
 
 <div class="container-fluid row">
     <div class="row no-gutters">
+        {% for comic in DBComix %}
         <div class="col-md-4">
-            <img src="{{ comic.image_source}}" style="width:250px;height:350px" alt="Comic Detail for {{ comic.title }}" />
+            <img src="{{ comic.image_source }}" style="width:250px;height:350px" alt="Comic Detail for {{ comic.title }}" />
         </div>
         <div class="col-md-8">
             <h2>{{ comic.title }}</h2>
             <p>{{ comic.description }}</p>
+            <p>{{ comic.genre }}</p>
+            <p>{{ comic.owner }}</p>
+            <p>{{ comic.added_date }}</p>
         </div>
+        {% endfor %}
     </div>
 </div>
-
 
 {% endblock %}
