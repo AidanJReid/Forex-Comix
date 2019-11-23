@@ -4,6 +4,26 @@ p {
   color: black;
 }
 
+
+/*Profiles*/
+
+body #profiles {
+  text-align: center;
+}
+
+#learner {
+  background: blue;
+}
+
+#school {
+  background: yellow;
+}
+
+#bookseller {
+  background: red;
+}
+
+
 /*Cards*/
 
 .flip-card {
