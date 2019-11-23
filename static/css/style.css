@@ -7,21 +7,10 @@ body p {
 
 /*Profiles*/
 
-body #profiles {
+#profiles.container.profiles {
   text-align: center;
 }
 
-#learner {
-  background: blue;
-}
-
-#school {
-  background: yellow;
-}
-
-#bookseller {
-  background: red;
-}
 
 
 /*Cards*/
