@@ -11,46 +11,75 @@
         <div class="col">
             <ul class="collapsible">
                 <li>
-                    <div class="collapsible-header">Add Comic</div>
+                    <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Add Comic</div>
                     <div class="collapsible-body">
-                        <form>
+                        <form action="" method="POST">
                             <div class="row">
-                                <div class="col">
-                                    <input type="text" class="form-control" placeholder="Language">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    <select id="comic_language" name="comic_language" class="form-control validate" required>
+                                      <option value="" disabled selected>Choose language</option>
+                                        {% for comic in DBComix %}
+                                        <option value="{{ comic.language }}">{{ comic.language }}</option>
+                                    {% endfor %}
+                                    </select>
+                                    <label>Language</label>
                                 </div>
-                                <div class="col">
-                                    <input type="text" class="form-control" placeholder="Title">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    <input id="icon_prefix" type="text" class="validate">
+                                    <label for="icon_prefix">Title</label>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col">
-                                    <input type="text" class="form-control" placeholder="Genre">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    <input id="icon_prefix" type="text" class="validate">
+                                    <label for="icon_prefix">Genre</label>
                                 </div>
-                                <div class="col">
-                                    <input type="text" class="form-control" placeholder="Character">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <input type="text" class="form-control" placeholder="Difficulty">
-                                </div>
-                                <div class="col">
-                                    <input type="text" class="form-control" placeholder="Comic image">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    <input id="icon_prefix" type="text" class="validate">
+                                    <label for="icon_prefix">Character</label>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col">
-                                    <input type="text" class="form-control" placeholder="Condition">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    <select>
+                                      <option value="" disabled selected>Choose your option</option>
+                                      {% for comic in DBComix %}
+                                        <option value="{{ comic.difficulty }}">{{ comic.difficulty }}</option>
+                                    {% endfor %}
+                                    </select>
+                                    <label for="icon_prefix">Difficulty</label>
                                 </div>
-                                <div class="col">
-                                    <input type="text" class="form-control" placeholder="Extra">
+                                <div class="file-field input-field col s6">
+                                    <div class="btn">
+                                        <span>Upload Image</span>
+                                        <input type="file">
+                                    </div>
+                                    <div class="file-path-wrapper">
+                                        <input class="file-path validate" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    <input id="icon_prefix" type="text" class="validate">
+                                    <label for="icon_prefix">Condition</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    <input id="icon_prefix" type="text" class="validate">
+                                    <label for="icon_prefix">Extra</label>
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary">Add Comic!</button>
                         </form>
                     </div>
                 </li>
-                </form>
             </ul>
         </div>
     </div>
