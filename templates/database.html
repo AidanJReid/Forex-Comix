@@ -17,13 +17,13 @@
                             <div class="row">
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">account_circle</i>
-                                    <select id="comic_language" name="comic_language" class="form-control validate" required>
-                                      <option value="" disabled selected>Choose language</option>
-                                        {% for comic in comics %}
+                                    <select>
+                                      <option value="" disabled selected>Choose your language</option>
+                                      {% for comic in DBcomix %}
                                         <option value="{{ comic.language }}">{{ comic.language }}</option>
                                     {% endfor %}
                                     </select>
-                                    <label>Language</label>
+                                    <label for="icon_prefix">Language</label>
                                 </div>
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">account_circle</i>
@@ -47,8 +47,8 @@
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">account_circle</i>
                                     <select>
-                                      <option value="" disabled selected>Choose your option</option>
-                                      {% for comic in comics %}
+                                      <option value="" disabled selected>Choose your level</option>
+                                      {% for comic in DBcomix %}
                                         <option value="{{ comic.difficulty }}">{{ comic.difficulty }}</option>
                                     {% endfor %}
                                     </select>
@@ -149,8 +149,14 @@
         </div>
     </div>
 </div>
-</body>
+
+<!--Database dropdown-->
+
+<script>
+    $(document).ready(function() {
+        $('.collapsible').collapsible();
+        $('select').material_select();
+    });
+</script>
 
 {% endblock %}
-
-</html>

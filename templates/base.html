@@ -54,8 +54,8 @@
     <header>
         <div class="jumbotron" style="background-image: url('https://static.wixstatic.com/media/9a9a38_f3f2b69e0f21490abdf4a212a75a5c34~mv2_d_3000_2000_s_2.jpg/v1/fill/w_640,h_484,al_c,q_80,usm_0.66_1.00_0.01/9a9a38_f3f2b69e0f21490abdf4a212a75a5c34~mv2_d_3000_2000_s_2.webp')">
             <div class="container" style="background: white">
-                    <h1 class="display-3">Forex-Comix</h1>
-                    <p class="lead">New and used foreign comics for language exchange</p>
+                <h1 class="display-3">Forex-Comix</h1>
+                <p class="lead">New and used foreign comics for language exchange</p>
             </div>
         </div>
     </header>
@@ -89,18 +89,20 @@
             </footer>
     </div>
 
-<!--Custom Scripts-->
+    <!--Custom Scripts-->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-<!--Database dropdown-->
-$(document).ready(function(){
-    $('.collapsible').collapsible();
-    $('select').formSelect();
-  });
- 
-  
+    <!--Database dropdown-->
+    <script>
+        $(document).ready(function() {
+            $('.collapsible').collapsible();
+            $('select').material_select();
+        });
+    </script>
+
 </body>
+
 </html>
