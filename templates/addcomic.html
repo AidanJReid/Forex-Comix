@@ -10,12 +10,12 @@
                         <div class="row">
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">account_circle</i>
-                                <select id="language">  
-                                      <option value="" disabled selected>Choose your language</option>
-                                      {% for comic in DBComix %}
-                                        <option value="{{ comic.language }}">{{ comic.language }}</option>
+                                <select id="language" name="language">  
+                                    <option value="" disabled selected>Choose your language</option>
+                                    {% for language in Languages %}
+                                    <option value="{{ language.Languages }}">{{ language.Languages }}</option>
                                     {% endfor %}
-                                    </select>
+                                </select>
                                 <label for="icon_prefix">Language</label>
                             </div>
                             <div class="input-field col s6">
@@ -40,11 +40,11 @@
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">account_circle</i>
                                 <select>
-                                      <option value="" disabled selected>Choose difficulty</option>
-                                      <option value="Easy"></option>
-                                      <option value="Medium"></option>
-                                      <option value="Hard"></option>
-                                    </select>
+                                    <option value="" disabled selected>Choose difficulty</option>
+                                    <option value="Easy"></option>
+                                    <option value="Medium"></option>
+                                    <option value="Hard"></option>
+                                </select>
                                 <label for="icon_prefix">Difficulty</label>
                             </div>
                             <div class="file-field input-field col s6">
