@@ -3,7 +3,9 @@
 
 /*Profiles*/
 
-
+#profiles.container.profiles {
+    text-align: center;
+}
 
 /*Cards*/
 
