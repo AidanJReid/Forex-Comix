@@ -33,9 +33,9 @@ def login():
     
 @app.route('/addcomic')
 def addcomic():
-    return render_template("addcomic.html", page_title="Add Comic")
+    return render_template("addcomic.html", page_title="Add Comic", languages=mongo.db.languages.find())
     
-@app.route('/database', methods=["GET", "POST"])
+@app.route('/database', methods=["GET"])
 def database():
     return render_template("database.html", page_title="Database", DBComix=mongo.db.DBComix.find())
     
