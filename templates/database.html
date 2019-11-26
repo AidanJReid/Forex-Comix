@@ -19,7 +19,7 @@
                                     <i class="material-icons prefix">account_circle</i>
                                     <select>
                                       <option value="" disabled selected>Choose your language</option>
-                                      {% for comic in DBcomix %}
+                                      {% for comic in comics %}
                                         <option value="{{ comic.language }}">{{ comic.language }}</option>
                                     {% endfor %}
                                     </select>
@@ -47,8 +47,8 @@
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">account_circle</i>
                                     <select>
-                                      <option value="" disabled selected>Choose your level</option>
-                                      {% for comic in DBcomix %}
+                                      <option value="" disabled selected>Choose difficulty</option>
+                                      {% for comic in comics %}
                                         <option value="{{ comic.difficulty }}">{{ comic.difficulty }}</option>
                                     {% endfor %}
                                     </select>
@@ -149,14 +149,4 @@
         </div>
     </div>
 </div>
-
-<!--Database dropdown-->
-
-<script>
-    $(document).ready(function() {
-        $('.collapsible').collapsible();
-        $('select').material_select();
-    });
-</script>
-
 {% endblock %}
