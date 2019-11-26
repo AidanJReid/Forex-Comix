@@ -31,6 +31,10 @@ def school():
 def login():
     return render_template("login.html", page_title="Login")
     
+@app.route('/addcomic')
+def addcomic():
+    return render_template("addcomic.html", page_title="Add Comic")
+    
 @app.route('/database', methods=["GET", "POST"])
 def database():
     return render_template("database.html", page_title="Database", DBComix=mongo.db.DBComix.find())

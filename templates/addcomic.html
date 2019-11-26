@@ -1,0 +1,80 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container row">
+    <div class="col">
+        <ul class="collapsible">
+            <li>
+                <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Add Comic</div>
+                <div class="collapsible-body">
+                    <form action="" method="POST">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">account_circle</i>
+                                <select id="language">  
+                                      <option value="" disabled selected>Choose your language</option>
+                                      {% for comic in comics %}
+                                        <option value="{{ comic.language }}">{{ comic.language }}</option>
+                                    {% endfor %}
+                                    </select>
+                                <label for="icon_prefix">Language</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="icon_prefix" type="text" class="validate">
+                                <label for="icon_prefix">Title</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="icon_prefix" type="text" class="validate">
+                                <label for="icon_prefix">Genre</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="icon_prefix" type="text" class="validate">
+                                <label for="icon_prefix">Character</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">account_circle</i>
+                                <select>
+                                      <option value="" disabled selected>Choose difficulty</option>
+                                      <option value="Easy"></option>
+                                      <option value="Medium"></option>
+                                      <option value="Hard"></option>
+                                    </select>
+                                <label for="icon_prefix">Difficulty</label>
+                            </div>
+                            <div class="file-field input-field col s6">
+                                <div class="btn">
+                                    <span>Upload Image</span>
+                                    <input type="file">
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="icon_prefix" type="text" class="validate">
+                                <label for="icon_prefix">Condition</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="icon_prefix" type="text" class="validate">
+                                <label for="icon_prefix">Extra</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Comic!</button>
+                    </form>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+{% endblock %}
