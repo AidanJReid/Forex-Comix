@@ -12,8 +12,8 @@
                                 <i class="material-icons prefix">account_circle</i>
                                 <select id="language" name="language">  
                                     <option value="" disabled selected>Choose your language</option>
-                                    {% for language in Languages %}
-                                    <option value="{{ language.Languages }}">{{ language.Languages }}</option>
+                                    {% for language in languages %}
+                                    <option value="{{ language.language }}">{{ language.language }}</option>
                                     {% endfor %}
                                 </select>
                                 <label for="icon_prefix">Language</label>
@@ -41,9 +41,9 @@
                                 <i class="material-icons prefix">account_circle</i>
                                 <select>
                                     <option value="" disabled selected>Choose difficulty</option>
-                                    <option value="Easy"></option>
-                                    <option value="Medium"></option>
-                                    <option value="Hard"></option>
+                                    <option value="Easy">Easy</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="Hard">Hard</option>
                                 </select>
                                 <label for="icon_prefix">Difficulty</label>
                             </div>

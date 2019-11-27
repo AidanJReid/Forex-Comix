@@ -33,7 +33,7 @@ def login():
     
 @app.route('/addcomic')
 def addcomic():
-    return render_template("addcomic.html", page_title="Add Comic", languages=mongo.db.languages.find())
+    return render_template("addcomic.html", page_title="Add Comic", languages=mongo.db.Languages.find())
     
 @app.route('/database', methods=["GET"])
 def database():
