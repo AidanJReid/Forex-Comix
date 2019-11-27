@@ -49,7 +49,17 @@ def database():
     
 @app.route('/database/<comic_title>', methods=['GET'])
 def database_comic(comic_title):
-    return render_template('comic.html', DBComix=mongo.db.DBComix.findOne())
+    return render_template('comic.html', DBComix=mongo.db.DBComix.find_one())
+    
+@app.route('/edit_comic/<DBComix_id>')
+def edit_comic(DBComix_id):
+    the_comic = mongo.db.DBComix.find_one({"_id": ObjectId(DBComix_id)})
+    all_comics = mongo.db.languages.find(), mongo.db.condition.find(), mongo.db.difficulty.find(), mongo.db.owner.find()
+    return render_template('editcomic.html',
+        comic=the_comic, languages=all_comics,
+        condition=all_comics,
+        difficulty=all_comics,
+        owner=all_comics, page_title='Add Comic')
                 
     
 @app.route('/contact', methods=['GET', 'POST'])

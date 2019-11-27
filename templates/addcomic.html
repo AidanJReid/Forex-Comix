@@ -77,14 +77,12 @@
                                 </select>
                                 <label for="condition">Condition</label>
                             </div>
-                            <div class="input-field col s6">
-                                <select id="owner" name="owner">  
-                                <option value="" disabled selected>Choose Ownership</option>
-                                    {% for owner in owner %}
-                                    <option value="{{ owner.owner }}">{{ owner.owner }}</option>
-                                    {% endfor %}
-                                </select>
-                                <label for="owner">Owner</label>
+                            <div class="switch col s6">
+                                <label>
+                                        <input type="checkbox">
+                                        <span class="lever"></span>
+                                        Owned by Individual
+                                    </label>
                             </div>
                         </div>
                         <div class="row">

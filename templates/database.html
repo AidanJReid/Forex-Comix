@@ -61,8 +61,10 @@
                                     <li>Condition: {{ comic.condition }}</li>
                                     <li>Genre: {{ comic.genre }}</li>
                                     <li>Character: {{ comic.character }}</li>
-                                    <li>Owner: {{ comic.owner }}</li>
+                                    <li>Owner: {{ comic.belongs_to_individual }}</li>
                                 </ul>
+                                    <a href= "{{url_for('edit_comic', DBComix_id=comic._id)}}" class="waves-effect waves-light btn-small green">Edit Comic</a>
+                                <button class="waves-effect waves-light btn-small blue" type="submit" name="action">View Comic</button>
                             </div>
                         </div>
                     </div>
