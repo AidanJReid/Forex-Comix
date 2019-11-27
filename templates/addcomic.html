@@ -6,7 +6,7 @@
             <li>
                 <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Add Comic</div>
                 <div class="collapsible-body">
-                    <form action="" method="POST">
+                    <form action="{{ url_for('insert_comic') }}" method="POST">
                         <div class="row">
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">account_circle</i>
@@ -16,41 +16,49 @@
                                     <option value="{{ language.language }}">{{ language.language }}</option>
                                     {% endfor %}
                                 </select>
-                                <label for="icon_prefix">Language</label>
+                                <label for="language">Language</label>
                             </div>
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">account_circle</i>
-                                <input id="icon_prefix" type="text" class="validate">
-                                <label for="icon_prefix">Title</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <i class="material-icons prefix">account_circle</i>
-                                <input id="icon_prefix" type="text" class="validate">
-                                <label for="icon_prefix">Genre</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <i class="material-icons prefix">account_circle</i>
-                                <input id="icon_prefix" type="text" class="validate">
-                                <label for="icon_prefix">Character</label>
+                                <input id="title" name="title" type="text">
+                                <label for="title">Title</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">account_circle</i>
-                                <select>
+                                <select id="genre" name="genre">
+                                    <option value="" disabled selected>Choose genre</option>
+                                    <option value="Horror">Horror</option>
+                                    <option value="Sci-Fi">Sci-Fi</option>
+                                    <option value="Comedy">Comedy</option>
+                                    <option value="Erotica">Erotica</option>
+                                    <option value="Fantasy">Fantasy</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <label for="genre">Genre</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="character" type="text" name="character">
+                                <label for="character">Main Character</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">account_circle</i>
+                                <select id="difficulty" name="difficulty">
                                     <option value="" disabled selected>Choose difficulty</option>
                                     <option value="Easy">Easy</option>
                                     <option value="Medium">Medium</option>
                                     <option value="Hard">Hard</option>
                                 </select>
-                                <label for="icon_prefix">Difficulty</label>
+                                <label for="difficulty">Difficulty</label>
                             </div>
                             <div class="file-field input-field col s6">
                                 <div class="btn">
                                     <span>Upload Image</span>
-                                    <input type="file">
+                                    <input id="image_source" type="file" name="image_source">
                                 </div>
                                 <div class="file-path-wrapper">
                                     <input class="file-path validate" type="text">
@@ -60,16 +68,28 @@
                         <div class="row">
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">account_circle</i>
-                                <input id="icon_prefix" type="text" class="validate">
-                                <label for="icon_prefix">Condition</label>
+                                <select id="condition" name="condition">
+                                    <option value="" disabled selected>Choose comic condition</option>
+                                    <option value="Bad condition">Bad condition</option>
+                                    <option value="Passable">Passable</option>
+                                    <option value="Good">Good</option>
+                                    <option value="As good as new">As good as new</option>
+                                </select>
+                                <label for="condition">Condition</label>
                             </div>
                             <div class="input-field col s6">
-                                <i class="material-icons prefix">account_circle</i>
-                                <input id="icon_prefix" type="text" class="validate">
-                                <label for="icon_prefix">Extra</label>
+                                <select id="owner" name="owner">  
+                                <option value="" disabled selected>Choose Ownership</option>
+                                    {% for owner in owner %}
+                                    <option value="{{ owner.owner }}">{{ owner.owner }}</option>
+                                    {% endfor %}
+                                </select>
+                                <label for="owner">Owner</label>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Add Comic!</button>
+                        <div class="row">
+                            <button type="submit" name="action" class="btn btn-primary">Add Comic!</button>
+                        </div>
                     </form>
                 </div>
             </li>
