@@ -111,10 +111,10 @@ To test responsiveness, the following mobiles were tested Galaxy S5, Pixel 2, Pi
 
 | Number | Issue            | Resolution   |
 |--------|------------------|--------------|
-|  1  | TBC  | TBC  |
-|  2  | TBC  | TBC  |
-|  3  | TBC  | TBC  |
-|  4  | TBC  | TBC  |
+|  1  | Source image not displaying for added comic  | TBC  |
+|  2  | Pagination  | TBC  |
+|  3  | Comics aren't being drilled into correctly  | TBC  |
+|  4  | No filters applied to comics  | TBC  |
 
 ## Deployment
 
