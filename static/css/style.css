@@ -1,5 +1,15 @@
 /* Home Page */
 
+/*Navbar*/
+
+.nav-item a {
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 0 20px;
+    text-transform: uppercase;
+}
 
 
 /*Profiles*/
