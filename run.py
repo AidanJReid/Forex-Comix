@@ -63,7 +63,7 @@ def edit_comic(DBComix_id):
         owner=all_comics,
         genre=all_comics,
         DBComix=all_comics,
-        page_title='Add Comic')
+        page_title='Edit Comic')
         
 @app.route('/delete_comic/<DBComix_id>')
 def delete_comic(DBComix_id):

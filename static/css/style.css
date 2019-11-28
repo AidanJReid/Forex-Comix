@@ -2,64 +2,6 @@
 
 /*Navbar*/
 
-.nav-item a {
-    color: #f2f2f2;
-    text-align: left;
-    text-decoration: none;
-    font-size: 10px;
-    margin: 0 20px;
-    text-transform: uppercase;
-}
-
-.navbar-light .navbar-nav .nav-link {
-    color: pink;
-}
-
-
-/*Profiles*/
-
-#profiles.container.profiles {
-    text-align: center;
-}
-
-/*Buttons*/
-
-
-/*Cards*/
-
-.flip-card {
-  background-color: transparent;
-  width: 200px;
-  height: 300px;
-  border: 1px solid #f1f1f1;
-  perspective: 1000px;
-}
-
-.flip-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  font-size: 12px;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-.flip-card:hover .flip-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-front,
-.flip-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-}
-
-.flip-back {
-  padding-top: 0%;
-  background-color: rgba(0, 0, 0, 0.20);
-  color: white;
-  transform: rotateY(180deg);
+nav {
+  line-height: 0px;
 }

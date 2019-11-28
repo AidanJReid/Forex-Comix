@@ -6,7 +6,7 @@
         <div>
             <form action="{{ url_for('insert_comic') }}" method="POST">
                 <div class="row">
-                    <div class="input-field col s6">
+                    <div class="input-field col-xs-12 col-md-6">
                         <i class="material-icons prefix">account_circle</i>
                         <select id="language" name="language">  
                                     <option value="" disabled selected>Choose your language</option>
@@ -20,14 +20,14 @@
                                 </select>
                         <label for="language">Language</label>
                     </div>
-                    <div class="input-field col s6">
+                    <div class="input-field col-xs-12 col-md-6">
                         <i class="material-icons prefix">account_circle</i>
                         <input id="title" name="title" type="text" value="{{comic.title}}">
                         <label for="title">Title</label>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s6">
+                    <div class="input-field col-xs-12 col-md-6">
                         <i class="material-icons prefix">account_circle</i>
                         <select id="genre" name="genre" value="{{comic.genre}}">
                             <option value="" disabled selected>Choose genre</option>
@@ -41,14 +41,14 @@
                         </select>
                         <label for="genre">Genre</label>
                     </div>
-                    <div class="input-field col s6">
+                    <div class="input-field col-xs-12 col-md-6">
                         <i class="material-icons prefix">account_circle</i>
                         <input id="character" type="text" name="character" value="{{comic.character}}">
                         <label for="character">Main Character</label>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s6">
+                    <div class="input-field col-xs-12 col-md-6">
                         <i class="material-icons prefix">account_circle</i>
                         <select id="difficulty" name="difficulty" value="{{comic.difficulty}}">
                                 <option value="" disabled selected>Choose difficulty</option>
@@ -62,14 +62,14 @@
                         </select>
                         <label for="difficulty">Difficulty</label>
                     </div>
-                    <div class="input-field col s6">
+                    <div class="input-field col-xs-12 col-md-6">
                         <i class="material-icons prefix">account_circle</i>
                         <input id="image_source" name="image_source" type="text" value="{{comic.image_source}}">
                         <label for="image_source">Comic Cover Link</label>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s6">
+                    <div class="input-field col-xs-12 col-md-6">
                         <i class="material-icons prefix">account_circle</i>
                         <select id="condition" name="condition" value="{{comic.condition}}">
                             <option value="" disabled selected>Choose Comic Condition</option>
@@ -83,7 +83,7 @@
                         </select>
                         <label for="condition">Condition</label>
                     </div>
-                    <div class="switch col s6">
+                    <div class="switch col-xs-12 col-md-6">
                         <label>
                             <input type="checkbox">
                             <span class="lever"></span>
