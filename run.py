@@ -35,6 +35,7 @@ def login():
 def addcomic():
     return render_template('addcomic.html', page_title='Add Comic', 
     languages=mongo.db.Languages.find(),
+    condition=mongo.db.conditions.find(),
     owner=mongo.db.owner.find())
     
 @app.route('/insert_comic', methods=['POST'])
@@ -63,6 +64,11 @@ def edit_comic(DBComix_id):
         genre=all_comics,
         DBComix=all_comics,
         page_title='Add Comic')
+        
+@app.route('/delete_comic/<DBComix_id>')
+def delete_comic(DBComix_id):
+    mongo.db.DBComix.remove({'_id': ObjectId(DBComix_id)})
+    return redirect(url_for('database'))
                 
     
 @app.route('/contact', methods=['GET', 'POST'])
