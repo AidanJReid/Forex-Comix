@@ -63,8 +63,8 @@
                                     <li>Character: {{ comic.character }}</li>
                                     <li>Owner: {{ comic.belongs_to_individual }}</li>
                                 </ul>
-                                    <a href= "{{url_for('edit_comic', DBComix_id=comic._id)}}" class="waves-effect waves-light btn-small green">Edit Comic</a>
-                                <button class="waves-effect waves-light btn-small blue" type="submit" name="action">View Comic</button>
+                                <button class="waves-effect waves-light btn-small white" type="submit"><a href= "{{url_for('edit_comic', DBComix_id=comic._id)}}">Edit Comic</a>
+                                <button class="waves-effect waves-light btn-small yellow" type="submit" name="action"><a href= "{{url_for('database_comic', comic_title=comic._id)}}">View Comic</a></button>
                             </div>
                         </div>
                     </div>
