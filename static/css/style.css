@@ -4,11 +4,15 @@
 
 .nav-item a {
     color: #f2f2f2;
-    text-align: center;
+    text-align: left;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 10px;
     margin: 0 20px;
     text-transform: uppercase;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: pink;
 }
 
 
