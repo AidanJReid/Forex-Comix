@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 
-</header>
-    <div class="container-fluid" id="body-bg">
-        <div class="container bio" id="what">
+    <div class="container-fluid">
+        <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-md-8">
+                <div class="col s12 m8">
                     <h2>{{ page_title }}</h2>
 
                     <p>Welcome!</p>
@@ -20,15 +19,16 @@
                     <p>We want to connect your comic books to an audience who will read widely and often.</p>
 
                 </div>
-                <div class="d-none d-md-block col-md-4 blackwhite">
+                <div class="col m4">
+                    <img src="" alt="school">
                 </div>
             </div>
         </div>
-        <div class="container" id="diary">
+        <div class="container">
             <div class="row">
-                <div class="d-none d-md-block col">
+                <div class="col s12">
                     <h2>Membership Benefits</h2>
-                    <ul>
+                    <ul class="browser-default">
                         <li>
                             <p>Drive readers to your physical or digital store by adding your comic books inventory to our database.</p>
                         </li>
@@ -54,20 +54,6 @@
                 </div>
             </div>
         </div>
-        <div class="container nl" id="reg">
-            <div class="jumbotron scroll text-left">
-                <div class="row">
-                    <div class="jumbotron col">
-                        <h1>Got Your Interest?</h1>
-                        <a href="./login.html" type="button" class="btn btn-danger btn-md" id="subscribe" target="_blank">Sign Up Here</a>
-                        <p>Choose your comics and receive your first batch within 14 days!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-</body>
 
 {% endblock %}
-
-</html>

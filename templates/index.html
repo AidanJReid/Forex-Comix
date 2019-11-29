@@ -1,9 +1,9 @@
 {% extends 'base.html' %} {% block content %}
 
 <div class="container-fluid" id="body-bg">
-    <div class="container bio" id="what">
+    <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-md-8">
+            <div class="col s12 l9">
                 <h2>What is Forex Comix?</h2>
 
                 <p>Not a financial trade term for starters!</p>
@@ -16,34 +16,35 @@
 
                 <p>So whether you pine for some <b>Tintin</b> in the original French, or <b>The Walking Dead</b> in Spanish, <b>Forex-Comix</b> provide a platform to enable exchange with other like-minded comic book fans of your target language.</p>
             </div>
-            <div class="d-none d-md-block col-md-4 stand">
+            <div class="col l3"><img src="" alt="comic">
             </div>
         </div>
     </div>
     <div class="container how">
         <div class="row">
-            <div class="d-none d-md-block col-md-4 stand">
+            <div class="col l3"><img src="" alt="comic2">
             </div>
-            <div class="col-xs-12 col-md-8">
+            <div class="col s12 l9">
                 <h2>How does it work?</h2>
-                <p>To participate in an exchange, you should have something to offer. <i>Duh!</i></p>
+                <p>To participate in an exchange, you should have something to offer. <em>Duh!</em></p>
 
                 <p><em>Example:</em> I want to learn latin Spanish. I have a few old-school English <b>Marvel</b> comics (The Avengers) that are gathering dust in the attic. Simply, 'Add' the comic to our database. Here you can also see what comics are available
                     in your chosen language.</p>
 
                 <p>You can exchange comics directly with the owner of the comic of your choice at our monthly networking meetups - also a chance to practice your language skills!).</p>
 
-                <p><i>Couldn't be easier!</i></p>
+                <p><em>Couldn't be easier!</em></p>
             </div>
         </div>
     </div>
-    <div class="container profiles" id="profiles">
-        <h2 class="ready-header">Ready to start?</h2>
-        <hr class="hr-main-sections">
+    <div class="container">
+        <h2 class="center-align">Ready to start?</h2>
+    </div>
+    <div class="container">
         <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="container-item" id="learner">
+            <div class="col s12 m4">
+                <div class="card small card-panel teal valign-wrapper">
+                    <div class="container" id="learner">
                         <h3>Learner</h3>
                         <p>Yes, I really want to improve my language skills!</p>
                         <p>let me see more!</p>
@@ -54,12 +55,12 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="container-item" id="school">
+            <div class="col s12 m4">
+                <div class="card small card-panel yellow valign-wrapper">
+                    <div class="container" id="school">
                         <h3>School</h3>
                         <p>Yes, I can see how this would benefit our language students</p>
-                        <p>How would it work for us?</p>
+                        <p>How would it work?</p>
                         <div id="button">
                             <a href="{{ url_for('school') }}" type="button" class="btn btn-warning">Learn More</a>
                         </div>
@@ -67,11 +68,11 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="container-item" id="bookseller">
+            <div class="col s12 m4">
+                <div class="card small card-panel red valign-wrapper">
+                    <div class="container" id="bookseller">
                         <h3>Bookseller</h3>
-                        <p>Yes, I have lots of stock I would like to sell to people!</p>
+                        <p>Yes, I have lots of stock I would like to sell!</p>
                         <p>How can I find more buyers?</p>
                         <div id="button">
                             <a href="{{ url_for('bookseller') }}" type="button" class="btn btn-warning">Learn More</a>
@@ -79,16 +80,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="container nl" id="nl">
-        <div class="jumbotron scroll text-left">
-            <h3 class="display-3">Get informed!</h3>
-            <hr class="my-4">
-            <p>Learn about XYZ</p>
-            <p class="lead">
-                <a class="btn btn-primary btn-lg" href="#" role="button">Sign up to our newsletter</a>
-            </p>
         </div>
     </div>
 </div>

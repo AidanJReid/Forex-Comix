@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 
-<div class="container-fluid" id="body-bg">
+<div class="container-fluid">
     <div class="container row">
         <div class="col">
             <h2>{{ page_title }}</h2>
@@ -9,7 +9,7 @@
     </div>
 
     <div class="container row">
-        <div class="col">
+        <div class="col s12">
             <ul class="collapsible">
                 <li>
                     <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Search Database</div>
@@ -17,18 +17,18 @@
                         <form>
                             <div class="form">
                                 <div class="row">
-                                    <div class="col">
+                                    <div class="col s12 m6">
                                         <input type="text" class="form-control" placeholder="Keyword">
                                     </div>
-                                    <div class="col">
+                                    <div class="col s12 m6">
                                         <input type="text" class="form-control" placeholder="Sort By">
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col">
+                                    <div class="col s12 m6">
                                         <input type="text" class="form-control" placeholder="Language">
                                     </div>
-                                    <div class="col">
+                                    <div class="col s12 m6">
                                         <input type="text" class="form-control" placeholder="Genre">
                                     </div>
                                 </div>
@@ -38,40 +38,42 @@
         </div>
     </div>
     <div class="container comics" id="comics">
-        <h3>Showing all comics</h3>
+        <h3 class="center-align">Showing all comics</h3>
         <hr class="hr-sections">
-        <div class="row no-gutters">
+    </div>
+    <div class="container">
+        <div class="row">
 
             {% for comic in DBComix %}
 
-            <div class="col-xs-12 col-md-6 col-lg-3">
-                <div class="border-info mb-3">
-                    <div class="flip-card">
-                        <div class="flip-inner">
-                            <div class="flip-front">
-                                <img class="image img-responsive" src="{{ comic.image_source }}" alt="comic" style="width:200px;height:300px">
-                            </div>
-                            <div class="flip-back">
-                                <h4>{{ comic.language }}</h4>
-                                <h5><a href="/database/{{ comic.url }}">{{ comic.title }}</a></h5>
-                                <hr>
-                                <ul>
-                                    <li>Genre: {{ comic.genre }}</li>
-                                    <li>Difficulty: {{ comic.difficulty }}</li>
-                                    <li>Condition: {{ comic.condition }}</li>
-                                    <li>Character: {{ comic.character }}</li>
-                                </ul>
-                                <button class="waves-effect waves-light btn-small white" type="submit"><a href= "{{url_for('edit_comic', DBComix_id=comic._id)}}">Edit</a>
+            <div class="col s12 m3">
+                <div class="card large">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="{{ comic.image_source }}">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4"><a href="/database/{{ comic.url }}">{{ comic.title }}</a><i class="material-icons right">more_vert</i></span>
+                        <p>{{ comic.language }}</p>
+                        <p>{{ comic.genre }}</p>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">{{ comic.language }}<i class="material-icons right">close</i></span>
+                        <h5><a href="/database/{{ comic.url }}">{{ comic.title }}</a></h5>
+                        <hr>
+                        <ul>
+                            <li>Difficulty: {{ comic.difficulty }}</li>
+                            <li>Condition: {{ comic.condition }}</li>
+                            <li>Character: {{ comic.character }}</li>
+                            <p>Description: {{ comic.description }}</p>
+                        </ul>
+                        <button class="waves-effect waves-light btn-small white" type="submit"><a href= "{{url_for('edit_comic', DBComix_id=comic._id)}}">Edit</a>
                                 <button class="waves-effect waves-light btn-small yellow" type="submit"><a href= "{{url_for('delete_comic', DBComix_id=comic._id)}}">Delete</a></button>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
 
             {% endfor %}
-
         </div>
     </div>
-</div>
-{% endblock %}
+
+    {% endblock %}

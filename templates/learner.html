@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    </header>
     <div class="container-fluid">
-        <div class="container bio" id="what">
+        <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-md-8">
+                <div class="col s12 col m8">
                     <h2>{{ page_title }}</h2>
 
                     <p>Bored with course materials?</p>
@@ -27,13 +26,13 @@
                     </div>
 
                 </div>
-                <div class="d-none d-md-block col-md-4 stand">
+                <div class="col m4"><img src="" alt="learner">
                 </div>
             </div>
         </div>
         <div class="container" id="diary">
             <div class="row">
-                <div class="d-none d-md-block col-md-6">
+                <div class="col m6">
                     <h2>Exchange Meetups</h2>
                     <p>These monthly meetings provide a wonderful opportunity for comic-book afficionado's, and language learners to exchangecomics, and converse in other languages</p>
 
@@ -47,25 +46,11 @@
 
                     <p><em>Couldn't be easier!</em></p>
                 </div>
-                <div class="col-xs-12 col-md-6 stand">
-
-                </div>
-            </div>
-        </div>
-        <div class="container nl" id="nl">
-            <div class="jumbotron scroll text-left">
-                <div class="row">
-                    <div class="jumbotron col">
-                        <h1>Register for free today!</h1>
-                        <a href="./login.html" type="button" class="btn btn-danger btn-md" id="subscribe" target="_blank">Hit Me!</a>
-                    </div>
+                <div class="col s12 m6">
+                    <img src="" alt="diary">
                 </div>
             </div>
         </div>
     </div>
 
-</body>
-
 {% endblock %}
-
-</html>

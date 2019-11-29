@@ -1,14 +1,15 @@
 {% extends 'base.html' %} {% block content %}
 
-<div class="container row">
-    <div class="col">
-        <h2>{{ page_title }}</h2>
-        <div>
-            <form action="{{ url_for('insert_comic') }}" method="POST">
-                <div class="row">
-                    <div class="input-field col-xs-12 col-md-6">
-                        <i class="material-icons prefix">account_circle</i>
-                        <select id="language" name="language">  
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h2>{{ page_title }}</h2>
+            <div>
+                <form action="{{ url_for('insert_comic') }}" method="POST">
+                    <div class="row">
+                        <div class="input-field col-xs-12 col-md-6">
+                            <i class="material-icons prefix">account_circle</i>
+                            <select id="language" name="language">  
                                     <option value="" disabled selected>Comic Language</option>
                                     {% for language in languages %}
                                             {% if language.language == DBComix.language %}
@@ -18,18 +19,18 @@
                                         {% endif %}
                                     {% endfor %}
                                 </select>
-                        <label for="language">Language</label>
+                            <label for="language">Language</label>
+                        </div>
+                        <div class="input-field col-xs-12 col-md-6">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="title" name="title" type="text" value="{{comic.title}}">
+                            <label for="title"> Title</label>
+                        </div>
                     </div>
-                    <div class="input-field col-xs-12 col-md-6">
-                        <i class="material-icons prefix">account_circle</i>
-                        <input id="title" name="title" type="text" value="{{comic.title}}">
-                        <label for="title"> Title</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col-xs-12 col-md-6">
-                        <i class="material-icons prefix">account_circle</i>
-                        <select id="genre" name="genre" value="{{comic.genre}}">
+                    <div class="row">
+                        <div class="input-field col-xs-12 col-md-6">
+                            <i class="material-icons prefix">account_circle</i>
+                            <select id="genre" name="genre" value="{{comic.genre}}">
                             <option value="" disabled selected>Comic Genre</option>
                                 {% for genre in genre %}
                                 {% if genre.genre == DBComix.genre %}
@@ -39,18 +40,18 @@
                                 {% endif %}
                                 {% endfor %}
                         </select>
-                        <label for="genre">Genre</label>
+                            <label for="genre">Genre</label>
+                        </div>
+                        <div class="input-field col-xs-12 col-md-6">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="character" type="text" name="character" value="{{comic.character}}">
+                            <label for="character"> Main Character</label>
+                        </div>
                     </div>
-                    <div class="input-field col-xs-12 col-md-6">
-                        <i class="material-icons prefix">account_circle</i>
-                        <input id="character" type="text" name="character" value="{{comic.character}}">
-                        <label for="character"> Main Character</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col-xs-12 col-md-6">
-                        <i class="material-icons prefix">account_circle</i>
-                        <select id="difficulty" name="difficulty" value="{{comic.difficulty}}">
+                    <div class="row">
+                        <div class="input-field col-xs-12 col-md-6">
+                            <i class="material-icons prefix">account_circle</i>
+                            <select id="difficulty" name="difficulty" value="{{comic.difficulty}}">
                                 <option value="" disabled selected>Choose difficulty</option>
                                 {% for difficulty in difficulty %}
                                     {% if difficulty.difficulty == DBComix.difficulty %}
@@ -60,18 +61,18 @@
                                     {% endif %}
                                 {% endfor %}
                         </select>
-                        <label for="difficulty">Difficulty</label>
+                            <label for="difficulty">Difficulty</label>
+                        </div>
+                        <div class="input-field col-xs-12 col-md-6">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="image_source" name="image_source" type="text" value="{{comic.image_source}}">
+                            <label for="image_source"> Comic Cover Link</label>
+                        </div>
                     </div>
-                    <div class="input-field col-xs-12 col-md-6">
-                        <i class="material-icons prefix">account_circle</i>
-                        <input id="image_source" name="image_source" type="text" value="{{comic.image_source}}">
-                        <label for="image_source"> Comic Cover Link</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col-xs-12 col-md-6">
-                        <i class="material-icons prefix">account_circle</i>
-                        <select id="condition" name="condition" value="{{comic.condition}}">
+                    <div class="row">
+                        <div class="input-field col-xs-12 col-md-6">
+                            <i class="material-icons prefix">account_circle</i>
+                            <select id="condition" name="condition" value="{{comic.condition}}">
                             <option value="" disabled selected>Comic Condition</option>
                                 {% for condition in condition %}
                                 {% if condition.condition == DBComix.condition %}
@@ -81,20 +82,21 @@
                                 {% endif %}
                                 {% endfor %}
                         </select>
-                        <label for="condition">Condition</label>
-                    </div>
-                    <div class="switch col-xs-12 col-md-6">
-                        <label>
+                            <label for="condition">Condition</label>
+                        </div>
+                        <div class="switch col-xs-12 col-md-6">
+                            <label>
                             <input type="checkbox">
                             <span class="lever"></span>
                             Owned by Individual
                         </label>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <button type="submit" name="action" class="btn btn-primary">Add Comic!</button>
-                </div>
-            </form>
+                    <div class="row">
+                        <button type="submit" name="action" class="btn btn-primary">Add Comic!</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>

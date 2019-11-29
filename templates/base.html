@@ -2,20 +2,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" type="text/css">
-    
-    <style>
-        #navbarColor01 {
-            line-height: 20px;
-        }
-    </style>
-    
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    <link href="static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <title>Forex-Comix</title>
 </head>
 
@@ -23,49 +16,51 @@
 
     <!--Navbar-->
 
-    <nav class="nav-extended navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('index') }}">Home<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('learner') }}">Learner</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('bookseller') }}">Bookseller</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('school') }}">School</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('database') }}">Database</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('addcomic') }}">Add Comic</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
-                </li>
+    <nav class="cyan" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo">Forex-Comix</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('learner') }}">Learner</a></li>
+                <li><a href="{{ url_for('bookseller') }}">Bookseller</a></li>
+                <li><a href="{{ url_for('school') }}">School</a></li>
+                <li><a href="{{ url_for('database') }}">Database</a></li>
+                <li><a href="{{ url_for('addcomic') }}">Add Comic</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
             </ul>
+
+            <ul id="nav-mobile" class="sidenav">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('learner') }}">Learner</a></li>
+                <li><a href="{{ url_for('bookseller') }}">Bookseller</a></li>
+                <li><a href="{{ url_for('school') }}">School</a></li>
+                <li><a href="{{ url_for('database') }}">Database</a></li>
+                <li><a href="{{ url_for('addcomic') }}">Add Comic</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
     </nav>
 
 
     <!--Page Header-->
 
-    <header>
-        <div class="jumbotron" style="background-image: url('https://static.wixstatic.com/media/9a9a38_f3f2b69e0f21490abdf4a212a75a5c34~mv2_d_3000_2000_s_2.jpg/v1/fill/w_640,h_484,al_c,q_80,usm_0.66_1.00_0.01/9a9a38_f3f2b69e0f21490abdf4a212a75a5c34~mv2_d_3000_2000_s_2.webp')">
-            <div class="container" style="background: white">
-                <h1 class="display-3">Forex-Comix</h1>
-                <p class="lead">New and used foreign comics for language exchange</p>
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <br><br>
+                <h1 class="header center cyan-text text-lighten-2">Forex-Comix</h1>
+                <div class="row center">
+                    <h5 class="header col s12 light">New and used foreign comics for language exchange</h5>
+                </div>
+                <div class="row center">
+                    <a href="" id="download-button" class="btn-large waves-effect waves-light cyan lighten-1">Get Started</a>
+                </div>
+                <br><br>
             </div>
         </div>
-    </header>
-
+        <div class="parallax"><img src="static/assets/images/background/stand.jpg" alt="comic-image"></div>
+    </div>
 
 
     <!--Main Container-->
@@ -78,35 +73,36 @@
 
     <!--Footer-->
 
-    <div class="container-fluid footer footer-dark bg-dark">
-        <footer="container">
+    <footer class="page-footer cyan">
+        <div class="container">
             <div class="row">
-                <div class="col-sm-4 foot-col">
-                    <h6>Connect</h6>
-                    <a href="https://www.facebook.com/aidanjreidauthor/" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
-                    <a href="http://www.twitter.com/aidanjreid" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
-                    <a href="https://www.linkedin.com/in/aidanreid/" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a>
-                </div>
-                <div class="col-sm-4 foot-col">
-                    <h6>Hands off!</h6>
-                    <p>Copyright Aidan J. Reid 2019</p>
+                <div class="col s12">
+                    <h5 class="white-text">What is this?</h5>
+                    <p class="grey-text text-lighten-4">This is a project for the Code Institute which demonstrates knowledge of HTML | Python | Flask | Django | CSS et al!</p>
+
+
                 </div>
             </div>
-            </footer>
-    </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                Made by <a class="brown-text text-lighten-3" href="https://github.com/AidanJReid">Aidan J. Reid</a>
+            </div>
+        </div>
+    </footer>
 
     <!--Custom Scripts-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="static/js/materialize.js"></script>
     <script>
         $(document).ready(function() {
             $('.collapsible').collapsible();
-            $('select').material_select();
+            $('select').formSelect();
             $(".dropdown-trigger").dropdown();
 
         });
     </script>
+    <script src="static/js/init.js"></script>
 
 </body>
 
