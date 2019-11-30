@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- CSS  -->
+    <link rel="icon" href="{{ url_for('static', filename='/assets/images/background/fclogo.jpg') }}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="static/css/style.css" type="text/css" rel="stylesheet" />
@@ -15,31 +16,33 @@
 <body>
 
     <!--Navbar-->
+    <div class="navbar-fixed">
+        <nav class="cyan" role="navigation">
+            <div class="nav-wrapper container">
+                <a href="{{ url_for('index') }}" class="brand-logo left">
+                Forex-Comix
+                </a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('learner') }}">Learner</a></li>
+                    <li><a href="{{ url_for('bookseller') }}">Bookseller</a></li>
+                    <li><a href="{{ url_for('school') }}">School</a></li>
+                    <li><a href="{{ url_for('database') }}">Database</a></li>
+                    <li><a href="{{ url_for('addcomic') }}">Add Comic</a></li>
+                </ul>
 
-    <nav class="cyan" role="navigation">
-        <div class="nav-wrapper container">
-            <a id="logo-container" href="#" class="brand-logo">Forex-Comix</a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="{{ url_for('index') }}">Home</a></li>
-                <li><a href="{{ url_for('learner') }}">Learner</a></li>
-                <li><a href="{{ url_for('bookseller') }}">Bookseller</a></li>
-                <li><a href="{{ url_for('school') }}">School</a></li>
-                <li><a href="{{ url_for('database') }}">Database</a></li>
-                <li><a href="{{ url_for('addcomic') }}">Add Comic</a></li>
-            </ul>
-
-            <ul id="nav-mobile" class="sidenav">
-                <li><a href="{{ url_for('index') }}">Home</a></li>
-                <li><a href="{{ url_for('learner') }}">Learner</a></li>
-                <li><a href="{{ url_for('bookseller') }}">Bookseller</a></li>
-                <li><a href="{{ url_for('school') }}">School</a></li>
-                <li><a href="{{ url_for('database') }}">Database</a></li>
-                <li><a href="{{ url_for('addcomic') }}">Add Comic</a></li>
-            </ul>
-            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        </div>
-    </nav>
-
+                <ul id="nav-mobile" class="sidenav">
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('learner') }}">Learner</a></li>
+                    <li><a href="{{ url_for('bookseller') }}">Bookseller</a></li>
+                    <li><a href="{{ url_for('school') }}">School</a></li>
+                    <li><a href="{{ url_for('database') }}">Database</a></li>
+                    <li><a href="{{ url_for('addcomic') }}">Add Comic</a></li>
+                </ul>
+                <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            </div>
+        </nav>
+    </div>
 
     <!--Page Header-->
 
@@ -47,7 +50,7 @@
         <div class="section no-pad-bot">
             <div class="container">
                 <br><br>
-                <h1 class="header center cyan-text text-lighten-2">Forex-Comix</h1>
+                <h2 class="header center cyan-text text-lighten-2">Comic Get Some..</h2>
                 <div class="row center">
                     <h5 class="header col s12 light">New and used foreign comics for language exchange</h5>
                 </div>
