@@ -64,7 +64,8 @@ def edit_comic(DBComix_id):
         genre=all_comics,
         DBComix=all_comics,
         page_title='Edit Comic')
-        
+
+
 @app.route('/delete_comic/<DBComix_id>')
 def delete_comic(DBComix_id):
     mongo.db.DBComix.remove({'_id': ObjectId(DBComix_id)})
