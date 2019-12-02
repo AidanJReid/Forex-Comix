@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- CSS  -->
-    <link rel="icon" href="{{ url_for('static', filename='/assets/images/background/fclogo.jpg') }}">
+    <link rel="icon" href="{{ url_for('static', filename='assets/images/background/fclogo.jpg') }}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="static/css/style.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css"/>
     <title>Forex-Comix</title>
 </head>
 
@@ -19,8 +19,8 @@
     <div class="navbar-fixed">
         <nav class="cyan" role="navigation">
             <div class="nav-wrapper container">
-                <a href="{{ url_for('index') }}" class="brand-logo left">
-                Forex-Comix
+                <a href="{{ url_for('index') }}" class="brand-logo">
+                FC
                 </a>
                 <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
@@ -51,7 +51,7 @@
         <div class="section no-pad-bot">
             <div class="container">
                 <br><br>
-                <h2 class="header center cyan-text text-lighten-2">Comic Get Some..</h2>
+                <h2 class="header center cyan-text text-lighten-2">Forex-Comix</h2>
                 <div class="row center">
                     <h5 class="header col s12 light">New and used foreign comics for language exchange</h5>
                 </div>
