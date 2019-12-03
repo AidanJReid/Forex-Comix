@@ -33,7 +33,7 @@ Forex-Comix: Foreign Exchange Comics.
 
 ## UX
 
-![Responsiveness Test](/assets/images/screencap.JPG)
+![Responsiveness Test](/static/assets/images/screencap.JPG)
 
 This is the third milestone project of my [Code Institute](https://codeinstitute.net/) Full Stack Software Development studies. The objective for this project is to "*Create a web platorm to enable the exchange of foreign language comic books*", using the **CRUD** operations of **C**reate, **R**ead, **U**pdate, and **D**elete.
 
