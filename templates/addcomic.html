@@ -35,12 +35,9 @@
                                     <i class="material-icons prefix">account_circle</i>
                                     <select id="genre" name="genre">
                                     <option value="" disabled selected>Comic Genre</option>
-                                    <option value="Horror">Horror</option>
-                                    <option value="Sci-Fi">Sci-Fi</option>
-                                    <option value="Comedy">Comedy</option>
-                                    <option value="Erotica">Erotica</option>
-                                    <option value="Fantasy">Fantasy</option>
-                                    <option value="Other">Other</option>
+                                    {% for genre in genre %}
+                                    <option value="{{ genre.genre }}">{{ genre.genre }}</option>
+                                    {% endfor %}
                                 </select>
                                     <label for="genre">Genre</label>
                                 </div>
@@ -55,9 +52,9 @@
                                     <i class="material-icons prefix">account_circle</i>
                                     <select id="difficulty" name="difficulty">
                                     <option value="" disabled selected>Choose Difficulty</option>
-                                    <option value="Easy">Easy</option>
-                                    <option value="Medium">Medium</option>
-                                    <option value="Hard">Hard</option>
+                                    {% for difficulty in difficulty %}
+                                    <option value="{{ difficulty.difficulty }}">{{ difficulty.difficulty }}</option>
+                                    {% endfor %}
                                 </select>
                                     <label for="difficulty">Difficulty</label>
                                 </div>
@@ -72,10 +69,9 @@
                                     <i class="material-icons prefix">account_circle</i>
                                     <select id="condition" name="condition">
                                     <option value="" disabled selected>Choose Condition</option>
-                                    <option value="Bad condition">Bad condition</option>
-                                    <option value="Passable">Passable</option>
-                                    <option value="Good">Good</option>
-                                    <option value="As good as new">As good as new</option>
+                                    {% for condition in condition %}
+                                    <option value="{{ condition.condition }}">{{ condition.condition }}</option>
+                                    {% endfor %}
                                 </select>
                                     <label for="condition">Comic Condition</label>
                                 </div>
@@ -86,6 +82,11 @@
                                         Owned by Individual
                                     </label>
                                 </div>
+                            </div>
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">subject</i>
+                                <textarea name="description" id="description" class="materialize-textarea">{{comic.description}}</textarea>
+                                <label for="icon_telephone">Comic Description</label>
                             </div>
                             <div class="row">
                                 <button type="submit" name="action" class="btn btn-primary">Add Comic!</button>

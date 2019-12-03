@@ -27,13 +27,16 @@ def bookseller():
 def school():
     return render_template('school.html', page_title='School')
 
+@app.route('/login')
+def login():
+    return render_template('login.html', page_title='Login')
+    
 @app.route('/addcomic')
 def addcomic():
     return render_template('addcomic.html', page_title='Add Comic', 
     languages=mongo.db.Languages.find(),
-    condition=mongo.db.condition.find(),
+    condition=mongo.db.conditions.find(),
     genre=mongo.db.genre.find(),
-    difficulty=mongo.db.difficulty.find(),
     owner=mongo.db.owner.find())
     
 @app.route('/insert_comic', methods=['POST'])
@@ -52,28 +55,11 @@ def database_comic(comic_title):
     
 @app.route('/edit_comic/<DBComix_id>')
 def edit_comic(DBComix_id):
-    the_comic = mongo.db.DBComix.find_one({'_id': ObjectId(DBComix_id)})
-    all_languages = mongo.db.Languages.find() 
-    all_genres = mongo.db.genre.find()
-    all_difficulty = mongo.db.difficulty.find()
-    all_condition = mongo.db.condition.find()
-    all_description = mongo.db.description.find()
+    the_comic = mongo.db.DBComix.find_one({"_id": ObjectId(DBComix_id)})
+    all_comics = mongo.db.language.find(), mongo.db.genre.find(), mongo.db.condition.find(), mongo.db.owner.find()
     return render_template('editcomic.html',
-        comic=the_comic, languages=all_languages, genres=all_genres, difficulty = all_difficulty, condition = all_condition, description = all_description, 
-        page_title='Edit Comic')
+        comic=the_comic, language=all_comics, condition=all_comics, owner=all_comics, page_title='Edit Comic')
 
-@app.route('/update_comic/<DBComix_id>')
-def update_comic(DBComix_id):
-    DBComix = mongo.db.DBComix
-    DBComix.update({'_id': ObjectId(DBComix_id)},
-    {
-        'language': request.form.get('language'),
-        'genre': request.form.get('genre'),
-        'condition': request.form.get('condition'),
-        'difficulty': request.form.get('difficulty'),
-        'is_owner': request.form.get('is_owner'),
-    })
-    return redirect(url_for('database'))
 
 @app.route('/delete_comic/<DBComix_id>')
 def delete_comic(DBComix_id):
