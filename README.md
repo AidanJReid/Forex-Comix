@@ -33,7 +33,7 @@ Forex-Comix: Foreign Exchange Comics.
 
 ## UX
 
-![Responsiveness Test](/static/assets/images/screencap.JPG)
+![Responsiveness Test](/static/assets/images/wireframe/screencap.JPG)
 
 This is the third milestone project of my [Code Institute](https://codeinstitute.net/) Full Stack Software Development studies. The objective for this project is to "*Create a web platorm to enable the exchange of foreign language comic books*", using the **CRUD** operations of **C**reate, **R**ead, **U**pdate, and **D**elete.
 
@@ -72,7 +72,7 @@ I used **Balsamiq for desktop** wireframes for two reasons:
 - Students have free access to the desktop version until the end of 2019.
 - I really enjoyed how simple and easy it is to use for mockups especially in conversations with my assigned mentor for brainstorming.
 
-![forex-comix.png](/assets/images/wireframe/forex-comix.png)
+![forex-comix.png](/static/assets/images/wireframe/forex-comix.png)
 
 
 ## Features
@@ -127,19 +127,19 @@ Their choice is of course dependent on their user profile and interest.
 
 I have a strong desire to fully flesh out this micro-site to become a business. To that end, there will need to be many more features to reward and ensure the customer journey and exchange is seamless.
 
-** Pagination **
+**Pagination**
 I've purposely kept the database small to dsiplay my prowess in manipulating the data for the users needs. As needs evolve, and more people (especially sellers and schools) become involved, then a much more comprehensive database and a way to effectively display these comics will be required.
 
-** Calendar **
+**Calendar**
 The lynchpin for this site is the ability for learners to meet in person, exchange comics and practice their language skills. I propose a calendar of events where learners are are notified of events in their area.
 
-** Comic Page **
+**Comic Page**
 Affiliate links which connect to either 3rd party vendors and/or booksellers who are registered and have a digital online store.
 
-** Registration/Log-in **
+**Registration/Log-in**
 Hugely important for future progress. The current ability for every visitor to add/delete comic could cause havoc to my database. For the purposes of this project, I decided against setting up a reg page as it was not part of the requirements. Suffice to say, it will be added in due course once Django is covered in our syllabus. 
 
-** Add Comic / Image **
+**Add Comic/Image**
 I would like users to be able to upload comic images from their phone or device, instead of linking to an image source online. 
 
 ## Technologies Used
@@ -153,7 +153,7 @@ I would like users to be able to upload comic images from their phone or device,
 - [jQuery 3.4.1](https://code.jquery.com/jquery/) - Used to improve and simplify Javascript code.
 - [Materialize 1.0.0](https://materializecss.com/) - Used as the overall design framework.
 
-#### Back-End
+### Back-End
 - **Flask**
     - [Flask 1.1.1](http://flask.pocoo.org/) - Used as a microframework.
     - [Jinja 2.10.3](http://jinja.pocoo.org/docs/2.10/) - Used as a template engine w/ Flask.
