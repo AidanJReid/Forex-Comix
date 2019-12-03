@@ -9,7 +9,7 @@
     <link rel="icon" href="{{ url_for('static', filename='assets/images/background/fclogo.jpg') }}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css"/>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
     <title>Forex-Comix</title>
 </head>
 
@@ -35,15 +35,15 @@
         </nav>
     </div>
 
-        <ul id="nav-mobile" class="sidenav">
-            <li><a href="{{ url_for('index') }}">Home</a></li>
-            <li><a href="{{ url_for('learner') }}">Learner</a></li>
-            <li><a href="{{ url_for('bookseller') }}">Bookseller</a></li>
-            <li><a href="{{ url_for('school') }}">School</a></li>
-            <li><a href="{{ url_for('database') }}">Database</a></li>
-            <li><a href="{{ url_for('addcomic') }}">Add Comic</a></li>
-        </ul>
-    
+    <ul id="nav-mobile" class="sidenav">
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('learner') }}">Learner</a></li>
+        <li><a href="{{ url_for('bookseller') }}">Bookseller</a></li>
+        <li><a href="{{ url_for('school') }}">School</a></li>
+        <li><a href="{{ url_for('database') }}">Database</a></li>
+        <li><a href="{{ url_for('addcomic') }}">Add Comic</a></li>
+    </ul>
+
 
     <!--Page Header-->
 
@@ -61,7 +61,8 @@
                 <br><br>
             </div>
         </div>
-        <div class="parallax"><img src="static/assets/images/background/thewalkingdead.jpg" alt="comic-image"></div>
+        <div class="parallax"><img src="static/assets/images/thewalkingdead.jpg" alt="comic-image" type="image">
+        </div>
     </div>
 
 
@@ -98,9 +99,9 @@
         $(document).ready(function() {
             $('.collapsible').collapsible();
             $('select').formSelect();
-            $(".dropdown-trigger").dropdown();
+            $('.dropdown-trigger').dropdown();
             $('.sidenav').sidenav();
-            $('.modal').modal();
+            $('.parallax').parallax();
         });
     </script>
     <script src="/static/js/init.js"></script>

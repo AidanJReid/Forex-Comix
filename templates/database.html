@@ -59,19 +59,8 @@
                             <li>Character: {{ comic.character }}</li>
                             <p>Description: {{ comic.description }}</p>
                         </ul>
-                        <button class="waves-effect waves-light btn-small white left" type="submit"><a href= "{{url_for('edit_comic', DBComix_id=comic._id)}}">Edit</a>
-                        <button data-target="modal1" class="waves-effect waves-light btn-small yellow right btn modal-trigger" type="submit">Delete</button>
-
-                        <!-- Modal Structure -->
-                        <div id="modal1" class="modal">
-                            <div class="modal-content">
-                                <h4>Delete This Comic?</h4>
-                                <p>Are you absolutely sure?</p>
-                            </div>
-                            <div class="modal-footer">
-                                <<a href= "{{url_for('delete_comic', DBComix_id=comic._id)}}" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-                            </div>
-                        </div>
+                        <button class="waves-effect waves-light btn-small white left" type="submit"><a href= "{{url_for('edit_comic', DBComix_id=comic._id)}}">Edit</a></button>
+                        <button class="waves-effect waves-light btn-small yellow right" type="submit"><a href= "{{url_for('delete_comic', DBComix_id=comic._id)}}">Delete</a></button>
                     </div>
                 </div>
             </div>
