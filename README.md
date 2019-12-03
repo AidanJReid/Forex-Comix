@@ -7,9 +7,6 @@ Forex-Comix: Foreign Exchange Comics.
     - [**User Stories**](#user-stories)
     - [**Design**](#design)
         - [**Framework**](#framework)
-        - [**Color Scheme**](#color-scheme)
-        - [**Icons**](#icons)
-        - [**Typography**](#typography)
     - [**Wireframes**](#wireframes)
 
 2. [**Features**](#features)
@@ -21,18 +18,12 @@ Forex-Comix: Foreign Exchange Comics.
     - [**Back-End Technologies**](#back-end-technologies)
 
 4. [**Testing**](#testing)
-    - [**Validators**](#validators)
-    - [**Compatibility**](#compatibility)
-    - [**Known Issues**](#known-issues)
 
 5. [**Deployment**](#deployment)
-    - [**Local Deployment**](#local-deployment)
-    - [**Remote Deployment**](#remote-deployment)
 
 6. [**Credits**](#credits)
     - [**Content**](#content)
     - [**Media**](#media)
-    - [**Code**](#code)
     - [**Acknowledgements**](#acknowledgements)
 
 ---
@@ -42,7 +33,7 @@ Forex-Comix: Foreign Exchange Comics.
 
 ## UX
 
-![Responsiveness Test](/assets/images/responsive.jpg)
+![Responsiveness Test](/assets/images/screencap.JPG)
 
 This is the third milestone project of my [Code Institute](https://codeinstitute.net/) Full Stack Software Development studies. The objective for this project is to "*Create a web platorm to enable the exchange of foreign language comic books*", using the **CRUD** operations of **C**reate, **R**ead, **U**pdate, and **D**elete.
 
