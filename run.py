@@ -63,7 +63,7 @@ def edit_comic(DBComix_id):
         comic=the_comic, languages=all_languages, genres=all_genres, difficulty = all_difficulty, condition = all_condition, description = all_description, 
         page_title='Edit Comic')
 
-@app.route('/update_comic/<DBComix_id>')
+@app.route('/update_comic/<DBComix_id>', methods=['POST'])
 def update_comic(DBComix_id):
     DBComix = mongo.db.DBComix
     DBComix.update({'_id': ObjectId(DBComix_id)},
@@ -73,6 +73,10 @@ def update_comic(DBComix_id):
         'condition': request.form.get('condition'),
         'difficulty': request.form.get('difficulty'),
         'is_owner': request.form.get('is_owner'),
+        'description': request.form.get('description'),
+        'title': request.form.get('title'),
+        'character': request.form.get('character'),
+        'image_source': request.form.get('image_source')
     })
     return redirect(url_for('database'))
 
