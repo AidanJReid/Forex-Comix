@@ -34,6 +34,7 @@ def addcomic():
     condition=mongo.db.condition.find(),
     genre=mongo.db.genre.find(),
     difficulty=mongo.db.difficulty.find(),
+    description=mongo.db.description.find(),
     owner=mongo.db.owner.find())
     
 @app.route('/insert_comic', methods=['POST'])
