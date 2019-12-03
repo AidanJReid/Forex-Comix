@@ -1,9 +1,9 @@
 {% extends 'base.html' %} {% block content %}
 
-<div class="container-fluid">
+<div class="container">
     <div class="row">
-        <div class="col m4">
         {% for comic in DBComix %}
+        <div class="col m4">
             <img src="{{ comic.image_source }}" style="width:250px;height:350px" alt="Comic Detail for {{ comic.title }}" />
         </div>
         <div class="col m8">

@@ -56,7 +56,7 @@
                     <h5 class="header col s12 light">New and used foreign comics for language exchange</h5>
                 </div>
                 <div class="row center">
-                    <a href="" id="download-button" class="btn-large waves-effect waves-light cyan lighten-1">Get Started</a>
+                    <a href="{{ url_for('database') }}" class="btn-large waves-effect waves-light cyan lighten-1">Search Database</a>
                 </div>
                 <br><br>
             </div>
@@ -92,7 +92,7 @@
     </footer>
 
     <!--Custom Scripts-->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
         $(document).ready(function() {
@@ -100,6 +100,7 @@
             $('select').formSelect();
             $(".dropdown-trigger").dropdown();
             $('.sidenav').sidenav();
+            $('.modal').modal();
         });
     </script>
     <script src="/static/js/init.js"></script>

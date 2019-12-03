@@ -3,39 +3,32 @@
 <div class="container-fluid">
     <div class="container row">
         <div class="col">
-            <h2>{{ page_title }}</h2>
-            <p>You can search our existing catalogue of comics and see where and who owns them.</p>
+            <h2>Search {{ page_title }}</h2>
+            <p>You can search our existing catalogue of comics using the relevant filter toggle.</p>
         </div>
     </div>
 
     <div class="container row">
-        <div class="col s12">
-            <ul class="collapsible">
-                <li>
-                    <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Search Database</div>
-                    <div class="collapsible-body">
-                        <form>
-                            <div class="form">
-                                <div class="row">
-                                    <div class="col s12 m6">
-                                        <input type="text" class="form-control" placeholder="Keyword">
-                                    </div>
-                                    <div class="col s12 m6">
-                                        <input type="text" class="form-control" placeholder="Sort By">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col s12 m6">
-                                        <input type="text" class="form-control" placeholder="Language">
-                                    </div>
-                                    <div class="col s12 m6">
-                                        <input type="text" class="form-control" placeholder="Genre">
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+        <form>
+            <div class="form">
+                <div class="row">
+                    <div class="col s12 m6">
+                        <input type="text" class="form-control" placeholder="Language">
                     </div>
-        </div>
+                    <div class="col s12 m6">
+                        <input type="text" class="form-control" placeholder="Title">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m6">
+                        <input type="text" class="form-control" placeholder="Owner">
+                    </div>
+                    <div class="col s12 m6">
+                        <input type="text" class="form-control" placeholder="Genre">
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
     <div class="container comics" id="comics">
         <h3 class="center-align">Showing all comics</h3>
@@ -52,13 +45,13 @@
                         <img class="activator" src="{{ comic.image_source }}">
                     </div>
                     <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4"><a href="/database/{{ comic.url }}">{{ comic.title }}</a><i class="material-icons right">more_vert</i></span>
+                        <span class="card-title activator grey-text text-darken-4"><a href="{{url_for('get_comic', DBComix_id=comic._id)}}">{{ comic.title }}</a><i class="material-icons right">more_vert</i></span>
                         <p>{{ comic.language }}</p>
                         <p>{{ comic.genre }}</p>
                     </div>
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4">{{ comic.language }}<i class="material-icons right">close</i></span>
-                        <h5><a href="/database/{{ comic.url }}">{{ comic.title }}</a></h5>
+                        <h5><a href="{{url_for('get_comic', DBComix_id=comic._id)}}">{{ comic.title }}</a></h5>
                         <hr>
                         <ul>
                             <li>Difficulty: {{ comic.difficulty }}</li>
@@ -66,13 +59,29 @@
                             <li>Character: {{ comic.character }}</li>
                             <p>Description: {{ comic.description }}</p>
                         </ul>
-                        <button class="waves-effect waves-light btn-small white" type="submit"><a href= "{{url_for('edit_comic', DBComix_id=comic._id)}}">Edit</a>
-                        <button class="waves-effect waves-light btn-small yellow" type="submit"><a href= "{{url_for('delete_comic', DBComix_id=comic._id)}}">Delete</a></button>
+                        <button class="waves-effect waves-light btn-small white left" type="submit"><a href= "{{url_for('edit_comic', DBComix_id=comic._id)}}">Edit</a>
+                        <button data-target="modal1" class="waves-effect waves-light btn-small yellow right btn modal-trigger" type="submit">Delete</button>
+
+                        <!-- Modal Structure -->
+                        <div id="modal1" class="modal">
+                            <div class="modal-content">
+                                <h4>Delete This Comic?</h4>
+                                <p>Are you absolutely sure?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <<a href= "{{url_for('delete_comic', DBComix_id=comic._id)}}" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
             {% endfor %}
+        </div>
+    </div>
+    <div class="row center">
+        <div class="col s12">
+            <button class="waves-effect waves-light btn-large light-green" type="submit"><a href="{{ url_for('addcomic') }}">Add Comic</a>
         </div>
     </div>
 

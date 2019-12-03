@@ -47,9 +47,10 @@ def insert_comic():
 def database():
     return render_template('database.html', page_title='Database', DBComix=mongo.db.DBComix.find())
     
-@app.route('/database/<comic_title>', methods=['GET'])
-def database_comic(comic_title):
-    return render_template('comic.html', DBComix=mongo.db.DBComix.find_one())
+@app.route('/get_comic/<DBComix_id>', methods=['GET'])
+def get_comic(DBComix_id):
+    get_comic=mongo.db.DBComix.find_one({'_id': DBComix_id})
+    return render_template('comic.html', comic=get_comic)
     
 @app.route('/edit_comic/<DBComix_id>')
 def edit_comic(DBComix_id):
