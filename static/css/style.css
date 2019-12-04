@@ -13,7 +13,7 @@ nav .brand-logo {
 }
 
 p {
-  line-height: 2rem;
+  line-height: 20rem;
 }
 
 .sidenav-trigger {
@@ -22,7 +22,6 @@ p {
 
 .parallax-container {
   min-height: 380px;
-  line-height: 0;
   height: auto;
   color: rgba(255,255,255,.9);
 }

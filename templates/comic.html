@@ -2,7 +2,6 @@
 
 <div class="container">
     <div class="row">
-        {% for comic in DBComix %}
         <div class="col m4">
             <img src="{{ comic.image_source }}" style="width:250px;height:350px" alt="Comic Detail for {{ comic.title }}" />
         </div>
@@ -13,7 +12,6 @@
             <p>{{ comic.owner }}</p>
             <p>{{ comic.added_date }}</p>
         </div>
-        {% endfor %}
     </div>
 </div>
 

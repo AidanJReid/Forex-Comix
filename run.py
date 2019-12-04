@@ -49,7 +49,8 @@ def database():
     
 @app.route('/get_comic/<DBComix_id>', methods=['GET'])
 def get_comic(DBComix_id):
-    get_comic=mongo.db.DBComix.find_one({'_id': DBComix_id})
+    get_comic=mongo.db.DBComix.find_one({'_id': ObjectId(DBComix_id)})
+    print(get_comic)
     return render_template('comic.html', comic=get_comic)
     
 @app.route('/edit_comic/<DBComix_id>')
