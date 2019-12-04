@@ -93,9 +93,6 @@ I used **Balsamiq for desktop** wireframes for two reasons:
 
 Sidenav pops out on small to medium devices (max-width 992 px) and contain the aforementioned nav links.
 
-##### Modal Display
-- Used Materialize modal to prompt users who want to Delete a comic whether they are certain or not.
-- I provided a 'quick and dirty' shortcut link to get straight to the Database of comics here which will improve the user experience.
 
 ##### Parallax
 - Two parallexs run across the home page using images again easily adopted by fitting the criteria required by Materialize to render correctly.
@@ -121,7 +118,7 @@ Their choice is of course dependent on their user profile and interest.
 - [CR**U**D] Update a comic by clicking the relevant button on the card. Current values transmit are shown to the user on the edit comic page.
 
 **Delete Comic**
-- [CRU**D**] Delete a comic. By clicking the 'Delete' button, a modal will prompt the user whether they are certain or not. Acceptance brings the user back to (updated) database page.
+- [CRU**D**] Delete a comic. By clicking the 'Delete' button, it brings the user back to (updated) database page.
 
 ### Features Left to Implement
 
@@ -193,10 +190,11 @@ To test responsiveness, the following mobiles were tested Galaxy S5, Pixel 2, Pi
 
 | Number | Issue            | Resolution   |
 |--------|------------------|--------------|
-|  1  | Source image not displaying for added comic  | TBC  |
-|  2  | Pagination  | TBC  |
-|  3  | Comics aren't being drilled into correctly  | TBC  |
+|  1  | Source image not displaying for added comic  | Fixed  |
+|  2  | Pagination  | Not a priority for this project  |
+|  3  | Comics aren't being drilled into correctly  | Fixed w/ help from mentor  |
 |  4  | No filters applied to comics  | TBC  |
+|  5  | Modal affecting deletion of chosen comic  | Deleted Modal  |
 
 ## Deployment
 
@@ -224,4 +222,4 @@ The following steps were taken:
 
 ### Acknowledgements
 
-* 
+* Brian Macharia for his wisdom and support

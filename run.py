@@ -70,14 +70,18 @@ def database():
     """
     Retrieves all comics and displays on database comic page
     """
-    return render_template('database.html', page_title='Database', DBComix=mongo.db.DBComix.find())
+    return render_template('database.html', DBComix=mongo.db.DBComix.find(),
+    page_title='Database')
 
 # Filter section of Database (search)
 
 @app.route('/filter_comic', methods=['GET'])
 def filter_comic():
+    languages=mongo.db.Languages.find(),
+    condition=mongo.db.condition.find(),
     filter_comic=mongo.db.DBComix.find()
     print(filter_comic)
+    return render_template('addcomic.html') 
     
 # Specific Comic View
 
