@@ -74,10 +74,11 @@ def database():
 
 # Filter section of Database (search)
 
-@app.route('/filter_comic', methods=['GET'])
-def filter_comic():
-    filter_comic=mongo.db.DBComix.find()
-    print(filter_comic)
+@app.route('/filter_comic/<DBComix_id>', methods=['GET', 'POST'])
+def filter_comic(DBComix_id):
+    filter_comic=mongo.db.DBComix.find(
+    {"$or": [{"DBComix_id.language": "language"}, {"DBComix_genre": "genre"}]})
+    return render_template('database.html', comic=filter_comic)
     
 # Specific Comic View
 
@@ -107,8 +108,7 @@ def edit_comic(DBComix_id):
     all_condition = mongo.db.condition.find()
     all_description = mongo.db.description.find()
     return render_template('editcomic.html',
-        comic=the_comic, languages=all_languages, genres=all_genres, difficulty = all_difficulty, 
-        condition = all_condition, description = all_description, 
+        comic=the_comic, languages=all_languages, genres=all_genres, difficulty = all_difficulty, condition = all_condition, description = all_description, 
         page_title='Edit Comic')
         
 # Update Comic / Insert Section
