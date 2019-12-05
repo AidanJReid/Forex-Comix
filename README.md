@@ -195,6 +195,7 @@ To test responsiveness, the following mobiles were tested Galaxy S5, Pixel 2, Pi
 |  3  | Comics aren't being drilled into correctly  | Fixed w/ help from mentor  |
 |  4  | No filters applied to comics  | TBC  |
 |  5  | Modal affecting deletion of chosen comic  | Deleted Modal  |
+|  6  | Stock image provided if none supplied  | TBC  |
 
 ## Deployment
 

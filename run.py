@@ -77,9 +77,8 @@ def database():
 
 @app.route('/filter_comic', methods=['GET'])
 def filter_comic():
-    languages=mongo.db.Languages.find(),
-    condition=mongo.db.condition.find(),
-    filter_comic=mongo.db.DBComix.find()
+    language=mongo.db.Languages.find(),
+    genre=mongo.db.genre.find(),
     print(filter_comic)
     return render_template('addcomic.html') 
     
