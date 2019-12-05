@@ -2,15 +2,44 @@
 
 <div class="container">
     <div class="row">
+        <div class="col s12">
+            <h2 class="center-align">{{ comic.title }}</h2>
+        </div>
+    </div>
+    <div class="row">
         <div class="col m4">
             <img src="{{ comic.image_source }}" style="width:250px;height:350px" alt="Comic Detail for {{ comic.title }}" />
         </div>
         <div class="col m8">
-            <h2>{{ comic.title }}</h2>
-            <p>{{ comic.description }}</p>
-            <p>{{ comic.genre }}</p>
-            <p>{{ comic.owner }}</p>
-            <p>{{ comic.added_date }}</p>
+            <ul class="collection">
+                <li class="collection-item avatar">
+                    <i class="material-icons circle">folder</i>
+                    <em>Brief: </em>{{ comic.description }}
+                </li>
+                <li class="collection-item avatar">
+                    <i class="material-icons circle">folder</i>
+                    <em>Language: </em>{{ comic.language }}
+                </li>
+                <li class="collection-item avatar">
+                    <i class="material-icons circle">folder</i>
+                    <em>Genre:</em> {{ comic.genre }}
+                </li>
+            </ul>
+            <a href="{{ comic.affilliate }}" class="waves-effect waves-light btn orange darken-1" target="_blank">Affiliate Link</a>
+            <a href="{{ url_for('database') }}" class="btn waves-effect waves-light cyan lighten-1">Database</a>
+            <a class="waves-effect waves-light btn view" onclick="$('#modal1').modal('open');">Delete Comic</a>
+
+            <!-- Modal Structure sourced from JSFiddle - see acknowledgements in README-->
+
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h4>Delete?!</h4>
+                    <p>Are you out of your frickin' mind?</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="{{url_for('delete_comic', DBComix_id=comic._id)}}" class=" modal-action modal-close waves-effect waves-green btn-flat">Do it!</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

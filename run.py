@@ -110,8 +110,12 @@ def edit_comic(DBComix_id):
     all_condition = mongo.db.condition.find()
     all_description = mongo.db.description.find()
     return render_template('editcomic.html',
-        comic=the_comic, languages=all_languages, genres=all_genres, difficulty = all_difficulty, 
-        condition = all_condition, description = all_description, 
+            comic=the_comic, 
+            languages=all_languages, 
+            genres=all_genres, 
+            difficulty = all_difficulty, 
+            condition = all_condition, 
+            description = all_description, 
         page_title='Edit Comic')
         
 # Update Comic / Insert Section
@@ -138,8 +142,9 @@ def update_comic(DBComix_id):
 @app.route('/delete_comic/<DBComix_id>')
 def delete_comic(DBComix_id):
     """
-    Clicking Delete on Database comic card prompts Modal
-    Agreeing will run the following function.
+    Clicking 'Delete' on Database comic card prompts
+    immediate deletion of card and return to
+    database page.
     """
     mongo.db.DBComix.remove({'_id': ObjectId(DBComix_id)})
     return redirect(url_for('database'))

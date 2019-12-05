@@ -88,23 +88,17 @@
         <div class="footer-copyright">
             <div class="container">
                 Made by <a class="brown-text text-lighten-3" href="https://github.com/AidanJReid">Aidan J. Reid</a>
+                <a class="grey-text text-lighten-4 right" href="https://www.facebook.com/">Get Social With Facebook</a>
             </div>
         </div>
     </footer>
 
-    <!--Custom Scripts-->
+     <!--Script tag for jQuery-->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+     <!--Script tag for Materialize-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('.collapsible').collapsible();
-            $('select').formSelect();
-            $('.dropdown-trigger').dropdown();
-            $('.sidenav').sidenav();
-            $('.parallax').parallax();
-        });
-    </script>
-    <script src="/static/js/init.js"></script>
+     <!--Script tag for custom JS file-->
+    <script src="{{url_for('static', filename='js/script.js')}}"></script>
 
 </body>
 

@@ -95,7 +95,7 @@ Sidenav pops out on small to medium devices (max-width 992 px) and contain the a
 
 
 ##### Parallax
-- Two parallexs run across the home page using images again easily adopted by fitting the criteria required by Materialize to render correctly.
+- Two parallexs run across the home page and subsequent user profile sections. Images fit the criteria required by Materialize to render correctly.
 
 ##### Images
 - The comic explosions and images for Parallaxes were procured from various stock photo sites (references at the bottom, and quoted within html file)
@@ -103,6 +103,9 @@ Sidenav pops out on small to medium devices (max-width 992 px) and contain the a
 ##### Cards
 - Simple grid system allowed me to center align and effectively communicate to the user, the next steps (3 - Learner, School or Bookseller).
 Their choice is of course dependent on their user profile and interest.
+
+##### Modal
+- Displayed with the requesst for deletion of comic.
 
 #### Footer
 - Used Parallax theme and employed the footer to tell people about my work and share my Github.
@@ -118,7 +121,7 @@ Their choice is of course dependent on their user profile and interest.
 - [CR**U**D] Update a comic by clicking the relevant button on the card. Current values transmit are shown to the user on the edit comic page.
 
 **Delete Comic**
-- [CRU**D**] Delete a comic. By clicking the 'Delete' button, it brings the user back to (updated) database page.
+- [CRU**D**] Delete a comic. By clicking the 'Delete' button within the specific comic page, it prompts a modal which (when user wants to delete) will bring the user back to (updated) database page.
 
 ### Features Left to Implement
 
@@ -194,8 +197,9 @@ To test responsiveness, the following mobiles were tested Galaxy S5, Pixel 2, Pi
 |  2  | Pagination  | Not a priority for this project  |
 |  3  | Comics aren't being drilled into correctly  | Fixed w/ help from mentor  |
 |  4  | No filters applied to comics  | TBC  |
-|  5  | Modal affecting deletion of chosen comic  | Deleted Modal  |
+|  5  | Modal affecting deletion of chosen comic  | Changed button from it being on the card to it being on page - works fine  |
 |  6  | Stock image provided if none supplied  | TBC  |
+|  7  | Buttons on cards askew in iPad mode  | Changed grid layout to m4 to accommodate  |
 
 ## Deployment
 
@@ -223,4 +227,5 @@ The following steps were taken:
 
 ### Acknowledgements
 
-* Brian Macharia for his wisdom and support
+* Modal Code via Andreas Molle on [JS Fiddle](https://jsfiddle.net/AndreasMolle/7f6hmgcf/13/).
+* Brian Macharia, my CI mentor, for his wisdom and support
