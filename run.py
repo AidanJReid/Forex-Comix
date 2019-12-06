@@ -78,9 +78,6 @@ def database():
 
 @app.route('/filter_comic', methods=['GET', 'POST'])
 def filter_comic():
-    """
-    Brian's Code - PLAN A
-    """
     if request.method == 'POST':
         filter_restrictions = request.args.to_dict()
         non_empty_restrictions = dict()
@@ -95,19 +92,20 @@ def filter_comic():
             comics = mongo.db.DBComix.find()
     else:
         comics = mongo.db.DBComix.find()
-        
-    return render_template('filter_comics.html', comics=comics,
-    languages=mongo.db.Languages.find(),
-    genres=mongo.db.genre.find())
-
-    """
-    PLAN B - Other user code - Get filtered comics and display 
-    summary details in cards
-    """
-    """
+            
+    return render_template('filter_comics.html', comics=comics)
+    
+    # filter_comic = mongo.db.DBcomix.find({"language": language, "genre": genre})
+    # return render_template('filter_comics.html')
+    # language=list(mongo.db.Languages.find()),
+    # genre=mongo.db.genre.find()
+    
+    # PLAN B - Other user code - Get filtered comics and display 
+    # summary details in cards
+    
     # Get user's submission from filter form and put into a dictionary
-    FILTERED RESULTS WITH NO SEARCH
-    """
+    # FILTERED RESULTS WITH NO SEARCH
+    
     # Build the filter query
     # Message if user doesn't select any filters before submitting form
     #     if len(form_input) == 0:
