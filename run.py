@@ -92,8 +92,21 @@ def filter_comic():
             comics = mongo.db.DBComix.find()
     else:
         comics = mongo.db.DBComix.find()
-            
+    
     return render_template('filter_comics.html', comics=comics)
+    
+    # filter_comic = mongo.db.DBComix.find({'_id': ObjectId(DBComix_id)})
+    # all_languages = mongo.db.Languages.find() 
+    # all_genres = mongo.db.genre.find()
+    # all_difficulty = mongo.db.difficulty.find()
+    # all_condition = mongo.db.condition.find()
+    # all_description = mongo.db.description.find()
+    # return render_template('editcomic.html',
+    #         comic=filter_comic, 
+    #         languages=all_languages, 
+    #         genres=all_genres)
+    
+    
     
     # filter_comic = mongo.db.DBcomix.find({"language": language, "genre": genre})
     # return render_template('filter_comics.html')

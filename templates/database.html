@@ -14,16 +14,15 @@
                             <div class="row">
                                 <div class="input-field col s12 m6">
                                     <i class="material-icons prefix">language</i>
-                                    <select id="filter_language" name="filter_language" class="form-control validate">
-                                    <option>Filter Language</option>
-                                    <!--Pass through languages prompting a selection from the drop down menu-->
-                                    <option value="French">French</option>
-                                    <option value="Spanish">Spanish</option>
-                                    <option value="German">German</option>
-                                    <option value="Italian">Italian</option>
-                                    <option value="Chinese">Chinese</option>
-                                    <option value="Japanese">Japanese</option>
-                                    <option value="Elvish">Elvish</option>
+                                    <select id="language" name="language">  
+                                    <option value="" disabled selected>Comic Language</option>
+                                    {% for language in languages %}
+                                        {% if comic.language == language.language %}
+                                        <option value="{{ comic.language }}" selected >{{ comic.language }}</option>
+                                        {% else %}
+                                        <option value="{{ language.language }}">{{ language.language }}</option>
+                                        {% endif %}
+                                    {% endfor %}
                                 </select>
                                     <label for="language">Language</label>
                                 </div>
