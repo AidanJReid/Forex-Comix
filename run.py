@@ -82,17 +82,22 @@ def insert_comic():
 def database():
     genres=mongo.db.genre.find()
     languages=mongo.db.Languages.find()
-    
+    # This is true if form has been submitted.
     if request.method == 'POST':
+        # Get restrictions provided by user through the form
+        # These are in the form of a MultiDict. Convert to normal dictionary.
         filter_restrictions = request.args.to_dict()
+        # Sending MongoDB only the restrictions that the user has supplied.
         non_empty_restrictions = dict()
         for restriction_key, restriction_value in filter_restrictions.items():
             if restriction_value != '':
                 non_empty_restrictions['restriction_key'] = restriction_value
-                
+        # If at least one restriction was supplied, pass onto Mongo:       
         comics = mongo.db.DBComix.find(non_empty_restrictions)
-            
+    
+    # Handle Get request        
     else:
+        #Get all comics from Mongo
         comics = mongo.db.DBComix.find()
     
     return render_template('database.html', 
